@@ -1,0 +1,4 @@
+CREATE DATABASE armslingdb;
+CREATE USER arm_dog WITH password '123123';
+GRANT ALL privileges ON DATABASE armslingdb TO arm_dog;
+
