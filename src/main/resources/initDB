@@ -1,4 +1,10 @@
 CREATE DATABASE armslingdb;
 CREATE USER arm_dog WITH password '123123';
-GRANT ALL privileges ON DATABASE armslingdb TO arm_dog;
 
+CREATE SEQUENCE hibernate_sequence;
+
+GRANT ALL PRIVILEGES ON SCHEMA public TO arm_dog;
+GRANT ALL PRIVILEGES ON DATABASE armslingdb TO arm_dog;
+GRANT ALL PRIVILEGES ON TABLE arm_tournament TO arm_dog;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO arm_dog;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO arm_dog;
