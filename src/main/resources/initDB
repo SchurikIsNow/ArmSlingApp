@@ -2,6 +2,7 @@ CREATE DATABASE armslingdb;
 CREATE USER arm_dog WITH password '123123';
 
 CREATE SEQUENCE hibernate_sequence;
+CREATE SEQUENCE AbstractTournament_seq;
 
 GRANT ALL PRIVILEGES ON SCHEMA public TO arm_dog;
 GRANT ALL PRIVILEGES ON DATABASE armslingdb TO arm_dog;

@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "arm_tournament")
-@SequenceGenerator(name = "AbstractTournament_seq")
+@SequenceGenerator(name = "AbstractTournament_seq", sequenceName = "AbstractTournament_seq", allocationSize = 1)
 @DiscriminatorColumn(name = "tournamentType")
 public abstract class AbstractTournament {
 
