@@ -4,7 +4,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("ONE_HANDED")
-public class SimplyTournament extends AbstractTournament {
+@DiscriminatorValue("TWO_HANDED")
+public class QweTournament extends AbstractTournament {
 
 }
