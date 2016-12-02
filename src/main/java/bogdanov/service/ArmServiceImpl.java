@@ -3,8 +3,8 @@ package bogdanov.service;
 
 import bogdanov.entity.enums.TournamentTypeEnum;
 import bogdanov.entity.tournament.AbstractTournament;
-import bogdanov.entity.tournament.QweTournament;
-import bogdanov.entity.tournament.SimplyTournament;
+import bogdanov.entity.tournament.TwoHandedTournament;
+import bogdanov.entity.tournament.OneHandedTournament;
 import bogdanov.repository.AbstractTournamentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,14 +16,12 @@ public class ArmServiceImpl implements ArmService {
   private AbstractTournamentRepository tournamentRepository;
 
   public String sayHello() {
-    AbstractTournament tournament = new SimplyTournament();
-    tournament.setName("77777");
+    AbstractTournament tournament = new OneHandedTournament();
     tournament.setTournamentType(TournamentTypeEnum.ONE_HANDED);
 
     tournamentRepository.save(tournament);
 
-    tournament = new QweTournament();
-    tournament.setName("asdasda");
+    tournament = new TwoHandedTournament();
     tournament.setTournamentType(TournamentTypeEnum.TWO_HANDED);
 
 

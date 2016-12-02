@@ -10,15 +10,13 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "arm_tournament")
-@SequenceGenerator(name = "AbstractTournament_seq", sequenceName = "AbstractTournament_seq", allocationSize = 1)
+@SequenceGenerator(name = "arm_tournament_seq", sequenceName = "arm_tournament_seq", allocationSize = 1)
 @DiscriminatorColumn(name = "tournamentType")
 public abstract class AbstractTournament {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "AbstractTournament_seq")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "arm_tournament_seq")
   private Long id;
-
-  private String name;
 
   @Enumerated(EnumType.STRING)
   @Column(name="tournamentType", insertable = false, updatable = false)

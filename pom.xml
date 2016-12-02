@@ -20,6 +20,7 @@
         <flyway.version>4.0.3</flyway.version>
         <cxf-jaxws.version>3.1.8</cxf-jaxws.version>
         <postgresql.version>9.4.1212</postgresql.version>
+        <your.name>jdbc.username</your.name>
     </properties>
 
 
@@ -49,19 +50,6 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
-        <!---->
-        <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate-c3p0</artifactId>-->
-            <!--<version>4.1.9.Final</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate-ehcache</artifactId>-->
-            <!--<version>4.1.9.Final</version>-->
-        <!--</dependency>-->
-<!---->
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
@@ -104,5 +92,14 @@
                 <version>2.2</version>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <filters>
+            <filter>src/main/resources/config/database.properties</filter>
+        </filters>
     </build>
 </project>

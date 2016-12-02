@@ -5,6 +5,6 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("ONE_HANDED")
-public class SimplyTournament extends AbstractTournament {
+public class OneHandedTournament extends AbstractTournament {
 
 }
