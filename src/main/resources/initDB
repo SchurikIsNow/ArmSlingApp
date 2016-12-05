@@ -1,11 +1,6 @@
-CREATE DATABASE armslingdb;
-CREATE USER arm_dog WITH password '123123';
+CREATE DATABASE ${jdbc.databasename};
+CREATE USER ${jdbc.username} WITH password '${jdbc.password}';
+GRANT ALL PRIVILEGES ON DATABASE ${jdbc.databasename} TO ${jdbc.username};
 
-CREATE SEQUENCE hibernate_sequence;
-CREATE SEQUENCE AbstractTournament_seq;
-
-GRANT ALL PRIVILEGES ON SCHEMA public TO arm_dog;
-GRANT ALL PRIVILEGES ON DATABASE armslingdb TO arm_dog;
-GRANT ALL PRIVILEGES ON TABLE arm_tournament TO arm_dog;
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO arm_dog;
-GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO arm_dog;
+<-- run in ${jdbc.databasename} -->
+CREATE SCHEMA IF NOT EXISTS AUTHORIZATION ${jdbc.username};
