@@ -1,6 +1,7 @@
 package bogdanov.service;
 
 import bogdanov.entity.tournament.AbstractTournament;
+import bogdanov.entity.wrestler.Wrestler;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -13,6 +14,9 @@ public interface ArmService {
 
   @WebMethod
   String sayHello();
+
+  @WebMethod
+  Wrestler createTestWrestler();
 
   @WebMethod
   List<AbstractTournament> findAllTournaments();

@@ -1,5 +1,6 @@
 package bogdanov.entity.wrestler;
 
+import bogdanov.entity.personal.PersonalData;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,5 +22,9 @@ public class Wrestler {
   private String team;
 
   private String city;
+
+  @ManyToOne(cascade = CascadeType.ALL, optional = false)
+  @JoinColumn(name = "personalData_id")
+  private PersonalData personalData;
 
 }

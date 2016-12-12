@@ -4,3 +4,15 @@ GRANT ALL PRIVILEGES ON DATABASE ${jdbc.databasename} TO ${jdbc.username};
 
 <-- run in ${jdbc.databasename} -->
 CREATE SCHEMA IF NOT EXISTS AUTHORIZATION ${jdbc.username};
+
+
+
+<-- for clear db -->
+DROP TABLE schema_version;
+DROP TABLE arm_tournament;
+DROP TABLE pers_personaldata;
+DROP TABLE pers_wrestler;
+
+DROP SEQUENCE arm_tournament_seq;
+DROP SEQUENCE pers_personaldata_seq;
+DROP SEQUENCE pers_wrestler_seq;

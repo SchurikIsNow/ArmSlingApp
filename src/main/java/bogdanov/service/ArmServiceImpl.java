@@ -2,10 +2,14 @@ package bogdanov.service;
 
 
 import bogdanov.entity.enums.TournamentTypeEnum;
+import bogdanov.entity.personal.PersonalData;
 import bogdanov.entity.tournament.AbstractTournament;
 import bogdanov.entity.tournament.TwoHandedTournament;
 import bogdanov.entity.tournament.OneHandedTournament;
+import bogdanov.entity.wrestler.Wrestler;
 import bogdanov.repository.AbstractTournamentRepository;
+import bogdanov.repository.PersonalDataRepository;
+import bogdanov.repository.WrestlerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -14,6 +18,12 @@ public class ArmServiceImpl implements ArmService {
 
   @Autowired
   private AbstractTournamentRepository tournamentRepository;
+
+  @Autowired
+  private WrestlerRepository wrestlerRepository;
+
+  @Autowired
+  private PersonalDataRepository personalDataRepository;
 
   public String sayHello() {
     AbstractTournament tournament = new OneHandedTournament();
@@ -28,6 +38,16 @@ public class ArmServiceImpl implements ArmService {
     tournamentRepository.save(tournament);
     System.out.println("Hello");
     return "Hello";
+  }
+
+  public Wrestler createTestWrestler() {
+    PersonalData personalData = new PersonalData();
+    Wrestler wrestler = new Wrestler();
+    personalData.setFirstName("Arm");
+    personalData.setLastName("Wrestling");
+    wrestler.setPersonalData(personalData);
+    wrestlerRepository.save(wrestler);
+    return wrestler;
   }
 
   public List<AbstractTournament> findAllTournaments() {
