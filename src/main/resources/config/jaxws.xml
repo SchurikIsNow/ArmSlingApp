@@ -7,7 +7,7 @@
         http://cxf.apache.org/schemas/jaxws.xsd">
 
 
-  <bean id="ArmService" class="bogdanov.service.ArmServiceImpl"/>
+  <bean id="ArmService" class="bogdanov.services.soap.ArmServiceImpl"/>
 
   <jaxws:endpoint id="ArmServiceW" implementor="#ArmService" address="/"/>
 

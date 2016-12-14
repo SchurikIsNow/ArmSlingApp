@@ -1,4 +1,4 @@
-package bogdanov.service;
+package bogdanov.services.soap;
 
 
 import bogdanov.entity.enums.TournamentTypeEnum;

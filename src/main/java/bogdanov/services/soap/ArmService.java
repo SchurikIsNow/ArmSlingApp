@@ -1,4 +1,4 @@
-package bogdanov.service;
+package bogdanov.services.soap;
 
 import bogdanov.entity.tournament.AbstractTournament;
 import bogdanov.entity.wrestler.Wrestler;
