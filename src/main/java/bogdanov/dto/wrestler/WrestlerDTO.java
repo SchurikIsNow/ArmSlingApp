@@ -10,5 +10,5 @@ public class WrestlerDTO {
   private String team;
   private String city;
   private PersonalDataDTO personalData;
-
+int j = 9;
 }
