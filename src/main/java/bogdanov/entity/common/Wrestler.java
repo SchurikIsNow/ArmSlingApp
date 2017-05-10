@@ -1,6 +1,5 @@
-package bogdanov.entity.wrestler;
+package bogdanov.entity.common;
 
-import bogdanov.entity.personal.PersonalData;
 import lombok.Getter;
 import lombok.Setter;
 

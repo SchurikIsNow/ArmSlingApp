@@ -2,11 +2,11 @@ package bogdanov.services.soap;
 
 
 import bogdanov.entity.enums.TournamentTypeEnum;
-import bogdanov.entity.personal.PersonalData;
+import bogdanov.entity.common.PersonalData;
 import bogdanov.entity.tournament.AbstractTournament;
 import bogdanov.entity.tournament.TwoHandedTournament;
 import bogdanov.entity.tournament.OneHandedTournament;
-import bogdanov.entity.wrestler.Wrestler;
+import bogdanov.entity.common.Wrestler;
 import bogdanov.repository.AbstractTournamentRepository;
 import bogdanov.repository.PersonalDataRepository;
 import bogdanov.repository.WrestlerRepository;

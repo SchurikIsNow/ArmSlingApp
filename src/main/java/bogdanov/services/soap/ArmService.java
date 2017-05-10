@@ -1,7 +1,7 @@
 package bogdanov.services.soap;
 
 import bogdanov.entity.tournament.AbstractTournament;
-import bogdanov.entity.wrestler.Wrestler;
+import bogdanov.entity.common.Wrestler;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
