@@ -1,10 +1,10 @@
 package bogdanov.entity.common;
 
-import bogdanov.entity.common.Wrestler;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -21,6 +21,8 @@ public class PersonalData {
   private String firstName;
   private String lastName;
   private String middleName;
+
+  private Date birthDate;
 
   @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "personalData")
   private List<Wrestler> wrestlers;

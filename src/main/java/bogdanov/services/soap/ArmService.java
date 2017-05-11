@@ -19,6 +19,9 @@ public interface ArmService {
   Wrestler createTestWrestler();
 
   @WebMethod
+  Wrestler createWrestler(Wrestler wrestlerDto); //TODO create DTO
+
+  @WebMethod
   List<AbstractTournament> findAllTournaments();
 
 }

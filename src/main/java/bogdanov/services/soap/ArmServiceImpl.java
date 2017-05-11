@@ -46,11 +46,18 @@ public class ArmServiceImpl implements ArmService {
     personalData.setFirstName("Arm");
     personalData.setLastName("Wrestling");
     wrestler.setPersonalData(personalData);
-    wrestlerRepository.save(wrestler);
-    return wrestler;
+    return wrestlerRepository.save(wrestler);
   }
 
   public List<AbstractTournament> findAllTournaments() {
     return (List<AbstractTournament>) tournamentRepository.findAll();
+  }
+
+  public Wrestler createWrestler(Wrestler wrestlerDto) {
+    Wrestler wrestler = new Wrestler();
+    wrestler.setMass(wrestlerDto.getMass());
+    wrestler.setCity(wrestlerDto.getCity());
+    wrestler.setTeam(wrestlerDto.getTeam());
+    return null;
   }
 }

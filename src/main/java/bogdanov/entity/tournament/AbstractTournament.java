@@ -1,10 +1,12 @@
 package bogdanov.entity.tournament;
 
+import bogdanov.entity.common.Wrestler;
 import bogdanov.entity.enums.TournamentTypeEnum;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -21,5 +23,8 @@ public abstract class AbstractTournament {
   @Enumerated(EnumType.STRING)
   @Column(name="tournamentType", insertable = false, updatable = false)
   private TournamentTypeEnum tournamentType;
+
+  @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "tournament")
+  private List<Wrestler> wrestlers;
 
 }
