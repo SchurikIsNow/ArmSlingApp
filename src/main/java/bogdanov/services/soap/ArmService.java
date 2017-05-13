@@ -24,4 +24,7 @@ public interface ArmService {
     @WebMethod
     List<AbstractTournament> findAllTournaments();
 
+    @WebMethod
+    List<WrestlerDTO> findAllWrestlers();
+
 }
