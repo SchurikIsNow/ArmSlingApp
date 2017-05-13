@@ -16,15 +16,15 @@ import java.util.List;
 @DiscriminatorColumn(name = "tournamentType")
 public abstract class AbstractTournament {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "arm_tournament_seq")
-  private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "arm_tournament_seq")
+    private Long id;
 
-  @Enumerated(EnumType.STRING)
-  @Column(name="tournamentType", insertable = false, updatable = false)
-  private TournamentTypeEnum tournamentType;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tournamentType", insertable = false, updatable = false)
+    private TournamentTypeEnum tournamentType;
 
-  @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "tournament")
-  private List<Wrestler> wrestlers;
+    @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "tournament")
+    private List<Wrestler> wrestlers;
 
 }

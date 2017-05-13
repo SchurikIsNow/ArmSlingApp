@@ -12,7 +12,7 @@ CREATE TABLE pers_personaldata (
 
 CREATE TABLE pers_wrestler (
     id BIGINT NOT NULL PRIMARY KEY,
-    mass NUMERIC(3, 3),
+    mass INTEGER,
     team VARCHAR,
     city VARCHAR,
     personalData_id BIGINT NOT NULL REFERENCES pers_personaldata (id)
