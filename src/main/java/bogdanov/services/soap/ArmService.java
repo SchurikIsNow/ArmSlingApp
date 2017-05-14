@@ -1,6 +1,8 @@
 package bogdanov.services.soap;
 
+import bogdanov.dto.JudgeDTO;
 import bogdanov.dto.WrestlerDTO;
+import bogdanov.entity.common.Judge;
 import bogdanov.entity.common.Wrestler;
 import bogdanov.entity.tournament.AbstractTournament;
 
@@ -20,6 +22,12 @@ public interface ArmService {
 
     @WebMethod
     Wrestler createWrestler(WrestlerDTO wrestlerDto);
+
+    @WebMethod
+    Judge createJudge(JudgeDTO judgeDTO);
+
+    @WebMethod
+    List<JudgeDTO> findAllJudges();
 
     @WebMethod
     List<AbstractTournament> findAllTournaments();

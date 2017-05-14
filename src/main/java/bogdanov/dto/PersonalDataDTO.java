@@ -16,5 +16,6 @@ public class PersonalDataDTO {
     private String middleName;
     private Date birthDate;
     private List<WrestlerDTO> wrestlers;
+    private List<JudgeDTO> judges;
 
 }

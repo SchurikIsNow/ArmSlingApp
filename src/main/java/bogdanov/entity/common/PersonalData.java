@@ -25,6 +25,7 @@ public class PersonalData {
     private Date birthDate;
 
     @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "personalData")
+    private List<Judge> judges;
+    @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "personalData")
     private List<Wrestler> wrestlers;
-
 }

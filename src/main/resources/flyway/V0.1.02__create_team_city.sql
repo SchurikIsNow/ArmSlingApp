@@ -21,11 +21,3 @@ ALTER TABLE pers_wrestler ADD COLUMN city_id BIGINT NOT NULL;
 ALTER TABLE pers_wrestler ADD COLUMN tournament_id BIGINT NOT NULL;
 ALTER TABLE pers_personaldata ADD COLUMN birthDate DATE;
 
-
---CREATE TABLE pers_wrestler (
---    id BIGINT NOT NULL PRIMARY KEY,
---    mass NUMERIC(3, 3),
---    team VARCHAR,
---    city VARCHAR,
---    personalData_id BIGINT NOT NULL REFERENCES pers_personaldata (id)
---);
