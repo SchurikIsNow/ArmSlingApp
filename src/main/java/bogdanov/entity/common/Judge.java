@@ -13,7 +13,6 @@ import javax.persistence.*;
 @SequenceGenerator(name = "pers_judge_seq", sequenceName = "pers_judge_seq", allocationSize = 1)
 public class Judge {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pers_judge_seq")
     private Long id;

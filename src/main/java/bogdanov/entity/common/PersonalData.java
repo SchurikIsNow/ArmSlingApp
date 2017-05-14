@@ -26,6 +26,12 @@ public class PersonalData {
 
     @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "personalData")
     private List<Judge> judges;
+
     @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "personalData")
     private List<Wrestler> wrestlers;
+
+    public void initLazyCollections() {
+        judges.size();
+        wrestlers.size();
+    }
 }

@@ -2,16 +2,18 @@ package bogdanov.services.soap;
 
 
 import bogdanov.dto.*;
-import bogdanov.entity.common.*;
+import bogdanov.entity.common.City;
+import bogdanov.entity.common.PersonalData;
+import bogdanov.entity.common.Team;
+import bogdanov.entity.common.Wrestler;
 import bogdanov.entity.enums.TournamentTypeEnum;
 import bogdanov.entity.tournament.AbstractTournament;
 import bogdanov.entity.tournament.ArmFightTournament;
 import bogdanov.entity.tournament.OneHandedTournament;
 import bogdanov.entity.tournament.TwoHandedTournament;
 import bogdanov.repository.AbstractTournamentRepository;
-import bogdanov.repository.JudgeRepository;
-import bogdanov.repository.PersonalDataRepository;
 import bogdanov.repository.WrestlerRepository;
+import bogdanov.services.cg.JudgeCgService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
@@ -26,10 +28,7 @@ public class ArmServiceImpl implements ArmService {
     private WrestlerRepository wrestlerRepository;
 
     @Autowired
-    private JudgeRepository judgeRepository;
-
-    @Autowired
-    private PersonalDataRepository personalDataRepository;
+    private JudgeCgService judgeCgService;
 
     public String sayHello() {
         AbstractTournament tournament = new OneHandedTournament();
@@ -123,49 +122,12 @@ public class ArmServiceImpl implements ArmService {
         return wrestlerRepository.save(wrestler);
     }
 
-
     public List<JudgeDTO> findAllJudges() {
-
-        List<JudgeDTO> ListDTO = new ArrayList<JudgeDTO>();
-
-        Iterable<Judge> judges = judgeRepository.findAll();
-
-        for (Judge judge : judges) {
-            ListDTO.add(convertJudgeToDTO(judge));
-        }
-        return ListDTO;
+        return judgeCgService.findAllJudges();
     }
 
-    private JudgeDTO convertJudgeToDTO(Judge judge) {
-        JudgeDTO judgeDTO = new JudgeDTO();
-        judgeDTO.setCategory(judge.getCategory());
-        judgeDTO.setId(judge.getId());
-
-        PersonalDataDTO personalDataDTO = new PersonalDataDTO();
-        PersonalData personalData = judge.getPersonalData();
-        personalDataDTO.setBirthDate(personalData.getBirthDate());
-        personalDataDTO.setFirstName(personalData.getFirstName());
-        personalDataDTO.setLastName(personalData.getLastName());
-        personalDataDTO.setMiddleName(personalData.getMiddleName());
-        personalDataDTO.setId(personalData.getId());
-        judgeDTO.setPersonalData(personalDataDTO);
-        return judgeDTO;
-    }
-
-    public Judge createJudge(JudgeDTO judgeDTO) {
-        PersonalData personalData = new PersonalData();
-        PersonalDataDTO personalDataDTO = judgeDTO.getPersonalData();
-        personalData.setBirthDate(personalDataDTO.getBirthDate());
-        personalData.setFirstName(personalDataDTO.getFirstName());
-        personalData.setLastName(personalDataDTO.getLastName());
-        personalData.setMiddleName(personalDataDTO.getMiddleName());
-
-        Judge judge = new Judge();
-        judge.setCategory(judgeDTO.getCategory());
-        judge.setPersonalData(personalData);
-        judge.setTournament(new ArmFightTournament());
-
-        return judgeRepository.save(judge);
+    public JudgeDTO createJudge(JudgeDTO judgeDTO) {
+        return judgeCgService.createJudge(judgeDTO);
     }
 }
 
