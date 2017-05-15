@@ -20,7 +20,7 @@ public interface ArmService {
     Wrestler createTestWrestler();
 
     @WebMethod
-    Wrestler createWrestler(WrestlerDTO wrestlerDto);
+    WrestlerDTO createWrestler(WrestlerDTO wrestlerDto);
 
     @WebMethod
     JudgeDTO createJudge(JudgeDTO judgeDTO);
