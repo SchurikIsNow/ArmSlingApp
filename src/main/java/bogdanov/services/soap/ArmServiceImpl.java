@@ -1,7 +1,9 @@
 package bogdanov.services.soap;
 
 
+import bogdanov.dto.CityDTO;
 import bogdanov.dto.JudgeDTO;
+import bogdanov.dto.TeamDTO;
 import bogdanov.dto.WrestlerDTO;
 import bogdanov.entity.common.PersonalData;
 import bogdanov.entity.common.Wrestler;
@@ -11,9 +13,12 @@ import bogdanov.entity.tournament.OneHandedTournament;
 import bogdanov.entity.tournament.TwoHandedTournament;
 import bogdanov.repository.AbstractTournamentRepository;
 import bogdanov.repository.WrestlerRepository;
+import bogdanov.services.cg.CityCgService;
 import bogdanov.services.cg.JudgeCgService;
+import bogdanov.services.cg.TeamCgService;
 import bogdanov.services.cg.WrestlerCgService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
@@ -28,6 +33,11 @@ public class ArmServiceImpl implements ArmService {
     @Autowired
     private JudgeCgService judgeCgService;
 
+    @Autowired
+    private CityCgService cityCgService;
+
+    @Autowired
+    private TeamCgService teamCgService;
     @Autowired
     private WrestlerCgService wrestlerCgService;
 
@@ -67,12 +77,22 @@ public class ArmServiceImpl implements ArmService {
         return wrestlerCgService.findAllWrestlers();
     }
 
-    public List<JudgeDTO> findAllJudges() {
-        return judgeCgService.findAllJudges();
+    public List<JudgeDTO> findAllJudges(int page, int size, Sort.Direction direction, String[] properties) {
+        return judgeCgService.findAllJudges(page, size, direction, properties);
     }
 
     public JudgeDTO createJudge(JudgeDTO judgeDTO) {
         return judgeCgService.createJudge(judgeDTO);
     }
+
+    public List<CityDTO> findAllCities(int page, int size, Sort.Direction direction, String[] properties) {
+        return cityCgService.findAllCities(page, size, direction, properties);
+    }
+
+    public List<TeamDTO> findAllTeams(int page, int size, Sort.Direction direction, String[] properties) {
+        return teamCgService.findAllTeams(page, size, direction, properties);
+    }
+
+
 }
 

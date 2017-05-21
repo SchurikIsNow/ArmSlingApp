@@ -5,6 +5,9 @@ import bogdanov.dto.JudgeDTO;
 import bogdanov.entity.common.Judge;
 import bogdanov.services.business.JudgeBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -27,5 +30,10 @@ public class JudgeCgServiceImpl implements JudgeCgService {
     public List<JudgeDTO> findAllJudges() {
         List<Judge> judges = judgeBusinessService.findAllJudges();
         return judgeConverter.listToDTOs(judges);
+    }
+    public List<JudgeDTO> findAllJudges(int page, int size, Sort.Direction direction, String[] properties) {
+        Page<Judge> judges = judgeBusinessService.findAllJudges(new PageRequest(page, size, direction, properties));
+        return judgeConverter.listToDTOs(judges.getContent());
+
     }
 }

@@ -1,8 +1,11 @@
 package bogdanov.services.business;
 
+import bogdanov.entity.common.City;
 import bogdanov.entity.common.Team;
 import bogdanov.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -17,7 +20,11 @@ public class TeamBusinessServiceImpl implements TeamBusinessService {
         return (List<Team>) teamRepository.findAll();
     }
 
-    public Team createTeam(Team city) {
-        return teamRepository.save(city);
+    public Team createTeam(Team team) {
+        return teamRepository.save(team);
+    }
+
+    public Page<Team> findAllTeams(Pageable pageable) {
+        return teamRepository.findAll(pageable);
     }
 }
