@@ -5,9 +5,7 @@ import lombok.Setter;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlTransient;
 import java.util.Date;
-import java.util.List;
 
 @Getter
 @Setter
@@ -19,10 +17,5 @@ public class PersonalDataDTO {
     private String lastName;
     private String middleName;
     private Date birthDate;
-
-    @XmlTransient
-    private List<WrestlerDTO> wrestlers;
-    @XmlTransient
-    private List<JudgeDTO> judges;
 
 }

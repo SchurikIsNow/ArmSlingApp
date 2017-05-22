@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,13 +15,8 @@ public class JudgeBusinessServiceImpl implements JudgeBusinessService {
     @Autowired
     private JudgeRepository judgeRepository;
 
-    @Transactional
     public List<Judge> findAllJudges() {
-        List<Judge> judges = (List<Judge>) judgeRepository.findAll();
-        for (Judge judge : judges) {
-            judge.getPersonalData().initLazyCollections();
-        }
-        return judges;
+        return (List<Judge>) judgeRepository.findAll();
     }
 
     public Judge createJudge(Judge judge) {

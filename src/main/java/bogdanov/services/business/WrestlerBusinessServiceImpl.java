@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,13 +15,8 @@ public class WrestlerBusinessServiceImpl implements WrestlerBusinessService {
     @Autowired
     private WrestlerRepository wrestlerRepository;
 
-    @Transactional
     public List<Wrestler> findAllWrestlers() {
-        List<Wrestler> wrestlers = (List<Wrestler>) wrestlerRepository.findAll();
-        for (Wrestler wrestler : wrestlers) {
-            wrestler.getPersonalData().initLazyCollections();
-        }
-        return wrestlers;
+        return (List<Wrestler>) wrestlerRepository.findAll();
     }
 
     public Wrestler createWrestler(Wrestler wrestler) {

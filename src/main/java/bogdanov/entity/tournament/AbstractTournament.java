@@ -1,5 +1,6 @@
 package bogdanov.entity.tournament;
 
+import bogdanov.entity.common.Judge;
 import bogdanov.entity.common.Wrestler;
 import bogdanov.entity.enums.TournamentTypeEnum;
 import lombok.Getter;
@@ -24,7 +25,14 @@ public abstract class AbstractTournament {
     @Column(name = "tournamentType", insertable = false, updatable = false)
     private TournamentTypeEnum tournamentType;
 
-    @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "tournament")
+    //TODO change to LAZY
+    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true)
+    @JoinColumn(name = "tournament_id")
     private List<Wrestler> wrestlers;
+
+    //TODO change to LAZY
+    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true)
+    @JoinColumn(name = "tournament_id")
+    private List<Judge> judges;
 
 }

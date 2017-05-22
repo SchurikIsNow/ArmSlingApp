@@ -5,7 +5,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Getter
 @Setter
@@ -24,14 +23,4 @@ public class PersonalData {
 
     private Date birthDate;
 
-    @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "personalData")
-    private List<Judge> judges;
-
-    @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "personalData")
-    private List<Wrestler> wrestlers;
-
-    public void initLazyCollections() {
-        judges.size();
-        wrestlers.size();
-    }
 }

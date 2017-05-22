@@ -1,6 +1,5 @@
 package bogdanov.entity.common;
 
-import bogdanov.entity.tournament.AbstractTournament;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,12 +27,6 @@ public class Wrestler {
     private PersonalData personalData;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "tournament_id")
-    private AbstractTournament tournament;
-
-    @ManyToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "city_id")
     private City city;
-
-
 }

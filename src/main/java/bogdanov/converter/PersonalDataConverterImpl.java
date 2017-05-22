@@ -2,7 +2,6 @@ package bogdanov.converter;
 
 import bogdanov.dto.PersonalDataDTO;
 import bogdanov.entity.common.PersonalData;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -10,12 +9,6 @@ import java.util.List;
 
 @Component
 public class PersonalDataConverterImpl implements PersonalDataConverter {
-
-    @Autowired
-    private JudgeConverter judgeConverter;
-    @Autowired
-    private WrestlerConverter wrestlerConverter;
-
 
     public PersonalDataDTO toDTO(PersonalData personalData) {
         PersonalDataDTO personalDataDTO = new PersonalDataDTO();
@@ -25,8 +18,6 @@ public class PersonalDataConverterImpl implements PersonalDataConverter {
         personalDataDTO.setLastName(personalData.getLastName());
         personalDataDTO.setMiddleName(personalData.getMiddleName());
         personalDataDTO.setId(personalData.getId());
-        personalDataDTO.setJudges(judgeConverter.listToDTOs(personalData.getJudges(), personalDataDTO));
-        personalDataDTO.setWrestlers(wrestlerConverter.listToDTOs(personalData.getWrestlers(), personalDataDTO));
 
         return personalDataDTO;
     }

@@ -1,6 +1,5 @@
 package bogdanov.entity.common;
 
-import bogdanov.entity.tournament.AbstractTournament;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,9 +20,5 @@ public class Judge {
     @JoinColumn(name = "personalData_id")
     private PersonalData personalData;
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "tournament_id")
-    private AbstractTournament tournament;
-
-    private String category;
+    private String category; // TODO change to Enum
 }
