@@ -9,10 +9,17 @@ CREATE SCHEMA IF NOT EXISTS AUTHORIZATION ${jdbc.username};
 
 <-- for clear db -->
 DROP TABLE schema_version;
-DROP TABLE arm_tournament;
-DROP TABLE pers_personaldata;
+
+DROP TABLE pers_city;
+DROP TABLE pers_team;
+DROP TABLE pers_judge;
 DROP TABLE pers_wrestler;
+DROP TABLE pers_personaldata;
+DROP TABLE arm_tournament;
 
 DROP SEQUENCE arm_tournament_seq;
 DROP SEQUENCE pers_personaldata_seq;
 DROP SEQUENCE pers_wrestler_seq;
+DROP SEQUENCE pers_judge_seq;
+DROP SEQUENCE pers_team_seq;
+DROP SEQUENCE pers_city_seq;
