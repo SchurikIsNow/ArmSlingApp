@@ -5,6 +5,9 @@ import bogdanov.dto.WrestlerDTO;
 import bogdanov.entity.common.Wrestler;
 import bogdanov.services.business.WrestlerBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -27,5 +30,11 @@ public class WrestlerCgServiceImpl implements WrestlerCgService {
     public List<WrestlerDTO> findAllWrestlers() {
         List<Wrestler> wrestlers = wrestlerBusinessService.findAllWrestlers();
         return wrestlerConverter.listToDTOs(wrestlers);
+    }
+
+    public List<WrestlerDTO> findAllWrestlers(int page, int size, Sort.Direction direction, String[] properties) {
+        Page<Wrestler> wrestlers = wrestlerBusinessService.findAllWrestlers(new PageRequest(page, size, direction, properties));
+        return wrestlerConverter.listToDTOs(wrestlers.getContent());
+
     }
 }

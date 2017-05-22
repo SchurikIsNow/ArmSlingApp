@@ -17,9 +17,9 @@ public class PersonalDataBusinessServiceImpl implements PersonalDataBusinessServ
     @Transactional
     public List<PersonalData> findAllPersonalDatas() {
         List<PersonalData> personalDatas = (List<PersonalData>) personalDataRepository.findAll();
-      for (PersonalData personalData: personalDatas){
-          personalData.initLazyCollections();
-      }
+        for (PersonalData personalData : personalDatas) {
+            personalData.initLazyCollections();
+        }
         return personalDatas;
     }
 

@@ -4,11 +4,8 @@ import bogdanov.dto.CityDTO;
 import bogdanov.dto.JudgeDTO;
 import bogdanov.dto.TeamDTO;
 import bogdanov.dto.WrestlerDTO;
-import bogdanov.entity.common.City;
 import bogdanov.entity.common.Wrestler;
 import bogdanov.entity.tournament.AbstractTournament;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import javax.jws.WebMethod;

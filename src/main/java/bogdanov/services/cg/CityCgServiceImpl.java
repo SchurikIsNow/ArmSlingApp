@@ -33,7 +33,7 @@ public class CityCgServiceImpl implements CityCgService {
 
     public List<CityDTO> findAllCities(int page, int size, Sort.Direction direction, String[] properties) {
         Page<City> cities = cityBusinessService.findAllCities(new PageRequest(page, size, direction, properties));
-       return cityConverter.listToDTOs(cities.getContent());
+        return cityConverter.listToDTOs(cities.getContent());
 
     }
 

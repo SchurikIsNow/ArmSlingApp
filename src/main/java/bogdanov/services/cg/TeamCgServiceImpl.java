@@ -32,7 +32,7 @@ public class TeamCgServiceImpl implements TeamCgService {
     }
 
     public List<TeamDTO> findAllTeams(int page, int size, Sort.Direction direction, String[] properties) {
-        Page<Team> teams = teamBusinessService.findAllTeams(new PageRequest(page, size,direction,properties));
+        Page<Team> teams = teamBusinessService.findAllTeams(new PageRequest(page, size, direction, properties));
         return teamConverter.listToDTOs(teams.getContent());
 
     }

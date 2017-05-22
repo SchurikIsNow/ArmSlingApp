@@ -1,6 +1,5 @@
 package bogdanov.services.business;
 
-import bogdanov.entity.common.City;
 import bogdanov.entity.common.Team;
 import bogdanov.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;

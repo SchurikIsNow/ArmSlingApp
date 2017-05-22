@@ -38,6 +38,7 @@ public class ArmServiceImpl implements ArmService {
 
     @Autowired
     private TeamCgService teamCgService;
+
     @Autowired
     private WrestlerCgService wrestlerCgService;
 

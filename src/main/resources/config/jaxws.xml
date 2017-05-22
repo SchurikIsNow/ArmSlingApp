@@ -7,8 +7,12 @@
         http://cxf.apache.org/schemas/jaxws.xsd">
 
 
-  <bean id="ArmService" class="bogdanov.services.soap.ArmServiceImpl"/>
+  <!--<bean id="ArmService" class="bogdanov.services.soap.ArmServiceImpl"/>-->
+  <!--<jaxws:endpoint id="ArmServiceW" implementor="#ArmService" address="/"/>-->
 
-  <jaxws:endpoint id="ArmServiceW" implementor="#ArmService" address="/"/>
+  <jaxws:endpoint id="TeamSoapServiceWS" implementor="#teamSoapServiceImpl" address="/soap/TeamSoapService"/>
+  <jaxws:endpoint id="CitySoapServiceWS" implementor="#citySoapServiceImpl" address="/soap/CitySoapService"/>
+  <jaxws:endpoint id="WrestlerSoapServiceWS" implementor="#wrestlerSoapServiceImpl" address="/soap/WrestlerSoapService"/>
+  <jaxws:endpoint id="JudgeSoapServiceWS" implementor="#judgeSoapServiceImpl" address="/soap/JudgeSoapService"/>
 
 </beans>

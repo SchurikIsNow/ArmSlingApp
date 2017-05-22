@@ -12,6 +12,6 @@ public interface TeamCgService {
     List<TeamDTO> findAllTeams();
 
     List<TeamDTO> findAllTeams(int page, int size, Sort.Direction direction, String[] properties);
-    
-    
+
+
 }

@@ -31,6 +31,7 @@ public class JudgeCgServiceImpl implements JudgeCgService {
         List<Judge> judges = judgeBusinessService.findAllJudges();
         return judgeConverter.listToDTOs(judges);
     }
+
     public List<JudgeDTO> findAllJudges(int page, int size, Sort.Direction direction, String[] properties) {
         Page<Judge> judges = judgeBusinessService.findAllJudges(new PageRequest(page, size, direction, properties));
         return judgeConverter.listToDTOs(judges.getContent());
