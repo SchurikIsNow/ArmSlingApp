@@ -25,6 +25,10 @@ public class PersonalDataConverterImpl implements PersonalDataConverter {
     public List<PersonalDataDTO> listToDTOs(List<PersonalData> personalDatas) {
         List<PersonalDataDTO> personalDataDTOs = new ArrayList<PersonalDataDTO>();
 
+        if (personalDatas == null) {
+            return personalDataDTOs;
+        }
+
         for (PersonalData personalData : personalDatas) {
             personalDataDTOs.add(toDTO(personalData));
         }
@@ -45,6 +49,10 @@ public class PersonalDataConverterImpl implements PersonalDataConverter {
 
     public List<PersonalData> listToEntitys(List<PersonalDataDTO> personalDataDTOs) {
         List<PersonalData> personalDatas = new ArrayList<PersonalData>();
+
+        if (personalDataDTOs == null) {
+            return personalDatas;
+        }
 
         for (PersonalDataDTO personalDataDTO : personalDataDTOs) {
             personalDatas.add(toEntity(personalDataDTO));

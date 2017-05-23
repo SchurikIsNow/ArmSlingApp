@@ -49,6 +49,10 @@ public class JudgeConverterImpl implements JudgeConverter {
     public List<Judge> listToEntitys(List<JudgeDTO> judgeDTOs) {
         List<Judge> judges = new ArrayList<Judge>();
 
+        if (judgeDTOs == null) {
+            return judges;
+        }
+
         for (JudgeDTO judgeDTO : judgeDTOs) {
             judges.add(toEntity(judgeDTO));
         }

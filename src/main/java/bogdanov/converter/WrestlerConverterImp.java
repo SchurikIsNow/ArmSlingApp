@@ -57,6 +57,10 @@ public class WrestlerConverterImp implements WrestlerConverter {
     public List<Wrestler> listToEntitys(List<WrestlerDTO> wrestlerDTOs) {
         List<Wrestler> wrestlers = new ArrayList<Wrestler>();
 
+        if (wrestlerDTOs == null) {
+            return wrestlers;
+        }
+
         for (WrestlerDTO wrestlerDTO : wrestlerDTOs) {
             wrestlers.add(toEntity(wrestlerDTO));
         }
