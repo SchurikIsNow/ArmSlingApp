@@ -3,11 +3,10 @@ package bogdanov.services.cg;
 import bogdanov.converter.TeamConverter;
 import bogdanov.dto.TeamDTO;
 import bogdanov.dto.request.TeamRequestDTO;
-import bogdanov.entity.common.QTeam;
 import bogdanov.entity.common.Team;
 import bogdanov.entity.request.TeamRequest;
+import bogdanov.services.AbstractService;
 import bogdanov.services.business.TeamBusinessService;
-import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,7 +16,8 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class TeamCgServiceImpl implements TeamCgService {
+public class TeamCgServiceImpl extends AbstractService implements TeamCgService {
+
     @Autowired
     private TeamBusinessService teamBusinessService;
 
@@ -42,12 +42,8 @@ public class TeamCgServiceImpl implements TeamCgService {
     }
 
     public List<TeamDTO> findAll(TeamRequestDTO teamRequestDTO) {
-        //TODO add Dozer for converting
-        TeamRequest teamRequest = new TeamRequest();
-        teamRequest.setTeamName(teamRequestDTO.getTeamName());
-
+        TeamRequest teamRequest = mappingService.map(teamRequestDTO, TeamRequest.class);
         List<Team> teams = teamBusinessService.findAll(teamRequest);
-
-        return  teamConverter.listToDTOs(teams);
+        return mappingService.mapList(teams, TeamDTO.class);
     }
 }
