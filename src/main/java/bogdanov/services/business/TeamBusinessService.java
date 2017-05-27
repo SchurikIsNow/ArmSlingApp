@@ -1,6 +1,7 @@
 package bogdanov.services.business;
 
 import bogdanov.entity.common.Team;
+import bogdanov.entity.request.TeamRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -14,5 +15,5 @@ public interface TeamBusinessService {
 
     Page<Team> findAllTeams(Pageable pageable);
 
-
+    List<Team> findAll(TeamRequest teamRequest);
 }

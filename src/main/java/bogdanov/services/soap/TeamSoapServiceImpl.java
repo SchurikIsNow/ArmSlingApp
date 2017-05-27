@@ -1,6 +1,7 @@
 package bogdanov.services.soap;
 
 import bogdanov.dto.TeamDTO;
+import bogdanov.dto.request.TeamRequestDTO;
 import bogdanov.services.cg.TeamCgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -24,6 +25,10 @@ public class TeamSoapServiceImpl implements TeamSoapService {
 
     public TeamDTO createTeam(TeamDTO teamDTO) {
         return teamCgService.createTeam(teamDTO);
+    }
+
+    public List<TeamDTO> findAll(TeamRequestDTO teamRequestDTO) {
+        return teamCgService.findAll(teamRequestDTO);
     }
 
 }

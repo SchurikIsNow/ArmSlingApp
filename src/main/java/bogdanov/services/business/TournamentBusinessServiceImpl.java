@@ -32,8 +32,15 @@ public class TournamentBusinessServiceImpl implements TournamentBusinessService 
         return tournamentRepository.save(tournament);
     }
 
+    @Transactional
     public Page<Tournament> findAllTournaments(Pageable pageable) {
-        return tournamentRepository.findAll(pageable);
+
+        Page<Tournament> list = (Page<Tournament>) tournamentRepository.findAll();
+
+        for (Tournament tournament : list) {
+            tournament.initializeLazy();
+        }
+        return list;
     }
 
 }

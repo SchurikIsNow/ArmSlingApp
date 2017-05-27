@@ -1,6 +1,7 @@
 package bogdanov.services.soap;
 
 import bogdanov.dto.TeamDTO;
+import bogdanov.dto.request.TeamRequestDTO;
 import org.springframework.data.domain.Sort;
 
 import javax.jws.WebMethod;
@@ -18,4 +19,7 @@ public interface TeamSoapService {
 
     @WebMethod
     List<TeamDTO> findAllTeams();
+
+    @WebMethod
+    List<TeamDTO> findAll(TeamRequestDTO teamRequestDTO);
 }
