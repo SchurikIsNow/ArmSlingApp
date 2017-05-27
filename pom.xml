@@ -22,11 +22,22 @@
         <flyway.version>4.0.3</flyway.version>
         <cxf-jaxws.version>3.1.8</cxf-jaxws.version>
         <postgresql.version>9.4.1212</postgresql.version>
+        <dozer.version>5.5.1</dozer.version>
         <your.name>jdbc.username</your.name>
     </properties>
 
 
     <dependencies>
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+            <version>${dozer.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer-spring</artifactId>
+            <version>${dozer.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-jpa</artifactId>

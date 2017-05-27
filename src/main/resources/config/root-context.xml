@@ -14,5 +14,6 @@
     <import resource="data.xml"/>
     <import resource="jaxws.xml"/>
 
+    <bean id="dozerBeanMapperFactoryBean" class="org.dozer.spring.DozerBeanMapperFactoryBean"/>
 
 </beans>
