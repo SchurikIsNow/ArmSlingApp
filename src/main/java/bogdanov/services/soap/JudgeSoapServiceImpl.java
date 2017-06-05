@@ -2,6 +2,7 @@ package bogdanov.services.soap;
 
 
 import bogdanov.dto.JudgeDTO;
+import bogdanov.dto.request.JudgeRequestDTO;
 import bogdanov.services.cg.JudgeCgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -25,6 +26,10 @@ public class JudgeSoapServiceImpl implements JudgeSoapService {
 
     public JudgeDTO createJudge(JudgeDTO judgeDTO) {
         return judgeCgService.createJudge(judgeDTO);
+    }
+
+    public List<JudgeDTO> findAll(JudgeRequestDTO judgeRequestDTO) {
+        return judgeCgService.findAll(judgeRequestDTO);
     }
 
 

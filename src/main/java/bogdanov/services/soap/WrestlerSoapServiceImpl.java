@@ -1,6 +1,7 @@
 package bogdanov.services.soap;
 
 import bogdanov.dto.WrestlerDTO;
+import bogdanov.dto.request.WrestlerRequestDTO;
 import bogdanov.services.cg.WrestlerCgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -26,4 +27,7 @@ public class WrestlerSoapServiceImpl implements WrestlerSoapService {
         return wrestlerCgService.findAllWrestlers(page, size, direction, properties);
     }
 
+    public List<WrestlerDTO> findAll(WrestlerRequestDTO wrestlerRequestDTO) {
+        return wrestlerCgService.findAll(wrestlerRequestDTO);
+    }
 }

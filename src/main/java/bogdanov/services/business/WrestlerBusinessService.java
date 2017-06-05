@@ -2,6 +2,7 @@ package bogdanov.services.business;
 
 
 import bogdanov.entity.common.Wrestler;
+import bogdanov.entity.request.WrestlerRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -14,4 +15,6 @@ public interface WrestlerBusinessService {
     List<Wrestler> findAllWrestlers();
 
     Page<Wrestler> findAllWrestlers(Pageable pageable);
+
+    List<Wrestler> findAll(WrestlerRequest wrestlerRequest);
 }

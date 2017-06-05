@@ -20,7 +20,7 @@ public class TeamBusinessServiceImpl implements TeamBusinessService {
 
 
     public List<Team> findAllTeams() {
-        return (List<Team>) teamRepository.findAll();
+        return teamRepository.findAll();
     }
 
     public Team createTeam(Team team) {
@@ -35,4 +35,5 @@ public class TeamBusinessServiceImpl implements TeamBusinessService {
         BooleanBuilder filter = TeamPredicates.getTeamFilter(QTeam.team, teamRequest);
         return (List<Team>) teamRepository.findAll(filter);
     }
+
 }

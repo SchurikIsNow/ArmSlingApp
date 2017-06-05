@@ -1,7 +1,11 @@
 package bogdanov.services.business;
 
+import bogdanov.builders.predicate.PersonalDataPredicates;
 import bogdanov.entity.common.PersonalData;
+import bogdanov.entity.common.QPersonalData;
+import bogdanov.entity.request.PersonalDataRequest;
 import bogdanov.repository.PersonalDataRepository;
+import com.querydsl.core.BooleanBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,10 +18,15 @@ public class PersonalDataBusinessServiceImpl implements PersonalDataBusinessServ
     private PersonalDataRepository personalDataRepository;
 
     public List<PersonalData> findAllPersonalDatas() {
-        return (List<PersonalData>) personalDataRepository.findAll();
+        return personalDataRepository.findAll();
     }
 
     public PersonalData createPetsonalData(PersonalData personalData) {
         return personalDataRepository.save(personalData);
+    }
+
+    public List<PersonalData> findAll(PersonalDataRequest personalDataRequest) {
+        BooleanBuilder filter = PersonalDataPredicates.getPersonalDataFilter(QPersonalData.personalData, personalDataRequest);
+        return (List<PersonalData>) personalDataRepository.findAll(filter);
     }
 }

@@ -1,6 +1,7 @@
 package bogdanov.services.soap;
 
 import bogdanov.dto.TournamentDTO;
+import bogdanov.dto.request.TournamentRequestDTO;
 import org.springframework.data.domain.Sort;
 
 import javax.jws.WebMethod;
@@ -18,4 +19,7 @@ public interface TournamentSoapService {
 
     @WebMethod
     List<TournamentDTO> findAllTournamentsWithFilter(int page, int size, Sort.Direction direction, String[] properties);
+
+    @WebMethod
+    List<TournamentDTO> findAll(TournamentRequestDTO tournamentRequestDTO);
 }

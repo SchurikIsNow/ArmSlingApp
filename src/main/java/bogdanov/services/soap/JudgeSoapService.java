@@ -2,6 +2,7 @@ package bogdanov.services.soap;
 
 
 import bogdanov.dto.JudgeDTO;
+import bogdanov.dto.request.JudgeRequestDTO;
 import org.springframework.data.domain.Sort;
 
 import javax.jws.WebMethod;
@@ -19,5 +20,8 @@ public interface JudgeSoapService {
 
     @WebMethod
     JudgeDTO createJudge(JudgeDTO judgeDTO);
+
+    @WebMethod
+    List<JudgeDTO> findAll(JudgeRequestDTO judgeRequestDTO);
 
 }

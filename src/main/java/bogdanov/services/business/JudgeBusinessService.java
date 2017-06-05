@@ -2,6 +2,7 @@ package bogdanov.services.business;
 
 
 import bogdanov.entity.common.Judge;
+import bogdanov.entity.request.JudgeRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -14,4 +15,6 @@ public interface JudgeBusinessService {
     List<Judge> findAllJudges();
 
     Page<Judge> findAllJudges(Pageable pageable);
+
+    List<Judge> findAll(JudgeRequest judgeRequest);
 }

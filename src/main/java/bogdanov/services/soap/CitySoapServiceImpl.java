@@ -1,6 +1,7 @@
 package bogdanov.services.soap;
 
 import bogdanov.dto.CityDTO;
+import bogdanov.dto.request.CityRequestDTO;
 import bogdanov.services.cg.CityCgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -24,6 +25,10 @@ public class CitySoapServiceImpl implements CitySoapService {
 
     public CityDTO createCity(CityDTO cityDTO) {
         return cityCgService.createCity(cityDTO);
+    }
+
+    public List<CityDTO> findAll(CityRequestDTO cityRequestDTO) {
+        return cityCgService.findAll(cityRequestDTO);
     }
 
 }

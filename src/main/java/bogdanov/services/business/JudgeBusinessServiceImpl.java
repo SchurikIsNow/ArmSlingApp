@@ -1,7 +1,11 @@
 package bogdanov.services.business;
 
+import bogdanov.builders.predicate.JudgePredicates;
 import bogdanov.entity.common.Judge;
+import bogdanov.entity.common.QJudge;
+import bogdanov.entity.request.JudgeRequest;
 import bogdanov.repository.JudgeRepository;
+import com.querydsl.core.BooleanBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,7 +20,7 @@ public class JudgeBusinessServiceImpl implements JudgeBusinessService {
     private JudgeRepository judgeRepository;
 
     public List<Judge> findAllJudges() {
-        return (List<Judge>) judgeRepository.findAll();
+        return judgeRepository.findAll();
     }
 
     public Judge createJudge(Judge judge) {
@@ -25,6 +29,11 @@ public class JudgeBusinessServiceImpl implements JudgeBusinessService {
 
     public Page<Judge> findAllJudges(Pageable pageable) {
         return judgeRepository.findAll(pageable);
+    }
+
+    public List<Judge> findAll(JudgeRequest judgeRequest) {
+        BooleanBuilder filter = JudgePredicates.getJudgeFilter(QJudge.judge, judgeRequest);
+        return (List<Judge>) judgeRepository.findAll(filter);
     }
 
 }

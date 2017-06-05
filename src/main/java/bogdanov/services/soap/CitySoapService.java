@@ -2,6 +2,7 @@ package bogdanov.services.soap;
 
 
 import bogdanov.dto.CityDTO;
+import bogdanov.dto.request.CityRequestDTO;
 import org.springframework.data.domain.Sort;
 
 import javax.jws.WebMethod;
@@ -19,4 +20,7 @@ public interface CitySoapService {
 
     @WebMethod
     List<CityDTO> findAllCities();
+
+    @WebMethod
+    List<CityDTO> findAll(CityRequestDTO cityRequestDTO);
 }

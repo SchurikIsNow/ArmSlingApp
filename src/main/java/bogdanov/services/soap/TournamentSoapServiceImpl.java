@@ -1,6 +1,7 @@
 package bogdanov.services.soap;
 
 import bogdanov.dto.TournamentDTO;
+import bogdanov.dto.request.TournamentRequestDTO;
 import bogdanov.services.cg.TournamentCgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -25,6 +26,10 @@ public class TournamentSoapServiceImpl implements TournamentSoapService {
 
     public List<TournamentDTO> findAllTournamentsWithFilter(int page, int size, Sort.Direction direction, String[] properties) {
         return tournamentCgService.findAllTournaments(page, size, direction, properties);
+    }
+
+    public List<TournamentDTO> findAll(TournamentRequestDTO tournamentRequestDTO) {
+        return tournamentCgService.findAll(tournamentRequestDTO);
     }
 
 }
