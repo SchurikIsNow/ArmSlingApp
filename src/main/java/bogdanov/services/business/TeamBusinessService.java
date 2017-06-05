@@ -11,8 +11,6 @@ public interface TeamBusinessService {
 
     Team createTeam(Team team);
 
-    List<Team> findAllTeams();
-
     Page<Team> findAllTeams(Pageable pageable);
 
     List<Team> findAll(TeamRequest teamRequest);

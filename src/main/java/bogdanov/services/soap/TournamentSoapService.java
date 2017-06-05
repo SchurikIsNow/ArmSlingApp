@@ -12,9 +12,6 @@ import java.util.List;
 public interface TournamentSoapService {
 
     @WebMethod
-    List<TournamentDTO> findAllTournaments();
-
-    @WebMethod
     TournamentDTO createTournament(TournamentDTO tournamentDto);
 
     @WebMethod

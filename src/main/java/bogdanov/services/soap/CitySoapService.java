@@ -19,8 +19,5 @@ public interface CitySoapService {
     List<CityDTO> findAllCitiesWithFilter(int page, int size, Sort.Direction direction, String[] properties);
 
     @WebMethod
-    List<CityDTO> findAllCities();
-
-    @WebMethod
     List<CityDTO> findAll(CityRequestDTO cityRequestDTO);
 }

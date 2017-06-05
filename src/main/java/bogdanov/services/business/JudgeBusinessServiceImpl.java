@@ -19,10 +19,6 @@ public class JudgeBusinessServiceImpl implements JudgeBusinessService {
     @Autowired
     private JudgeRepository judgeRepository;
 
-    public List<Judge> findAllJudges() {
-        return judgeRepository.findAll();
-    }
-
     public Judge createJudge(Judge judge) {
         return judgeRepository.save(judge);
     }

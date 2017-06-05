@@ -12,9 +12,6 @@ import java.util.List;
 public interface WrestlerSoapService {
 
     @WebMethod
-    List<WrestlerDTO> findAllWrestlers();
-
-    @WebMethod
     WrestlerDTO createWrestler(WrestlerDTO wrestlerDto);
 
     @WebMethod

@@ -19,10 +19,6 @@ public class TeamSoapServiceImpl implements TeamSoapService {
         return teamCgService.findAllTeams(page, size, direction, properties);
     }
 
-    public List<TeamDTO> findAllTeams() {
-        return teamCgService.findAllTeams();
-    }
-
     public TeamDTO createTeam(TeamDTO teamDTO) {
         return teamCgService.createTeam(teamDTO);
     }

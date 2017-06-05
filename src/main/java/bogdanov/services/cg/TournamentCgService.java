@@ -11,8 +11,6 @@ public interface TournamentCgService {
 
     TournamentDTO createTournament(TournamentDTO tournamentDTO);
 
-    List<TournamentDTO> findAllTournaments();
-
     List<TournamentDTO> findAllTournaments(int page, int size, Sort.Direction direction, String[] properties);
 
     List<TournamentDTO> findAll(TournamentRequestDTO tournamentRequestDTO);

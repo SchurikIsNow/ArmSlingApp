@@ -19,10 +19,6 @@ public class TeamBusinessServiceImpl implements TeamBusinessService {
     private TeamRepository teamRepository;
 
 
-    public List<Team> findAllTeams() {
-        return teamRepository.findAll();
-    }
-
     public Team createTeam(Team team) {
         return teamRepository.save(team);
     }

@@ -11,8 +11,6 @@ public interface CityBusinessService {
 
     City createCity(City city);
 
-    List<City> findAllCities();
-
     Page<City> findAllCities(Pageable pageable);
 
     List<City> findAll(CityRequest cityRequest);

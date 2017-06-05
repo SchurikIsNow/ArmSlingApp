@@ -1,6 +1,5 @@
 package bogdanov.services.cg;
 
-import bogdanov.converter.CityConverter;
 import bogdanov.dto.CityDTO;
 import bogdanov.dto.request.CityRequestDTO;
 import bogdanov.entity.common.City;
@@ -21,23 +20,16 @@ public class CityCgServiceImpl extends AbstractService implements CityCgService 
     @Autowired
     private CityBusinessService cityBusinessService;
 
-    @Autowired
-    private CityConverter cityConverter;
-
     public CityDTO createCity(CityDTO cityDTO) {
-        City city = cityConverter.toEntity(cityDTO);
+        City city = mappingService.map(cityDTO, City.class);
         City createdCity = cityBusinessService.createCity(city);
-        return cityConverter.toDTO(createdCity);
+        return mappingService.map(createdCity, CityDTO.class);
     }
 
-    public List<CityDTO> findAllCities() {
-        List<City> cities = cityBusinessService.findAllCities();
-        return cityConverter.listToDTOs(cities);
-    }
 
     public List<CityDTO> findAllCities(int page, int size, Sort.Direction direction, String[] properties) {
         Page<City> cities = cityBusinessService.findAllCities(new PageRequest(page, size, direction, properties));
-        return cityConverter.listToDTOs(cities.getContent());
+        return mappingService.mapList(cities.getContent(), CityDTO.class);
 
     }
 

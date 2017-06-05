@@ -14,12 +14,9 @@ import java.util.List;
 
 @Component
 public class PersonalDataBusinessServiceImpl implements PersonalDataBusinessService {
+
     @Autowired
     private PersonalDataRepository personalDataRepository;
-
-    public List<PersonalData> findAllPersonalDatas() {
-        return personalDataRepository.findAll();
-    }
 
     public PersonalData createPetsonalData(PersonalData personalData) {
         return personalDataRepository.save(personalData);

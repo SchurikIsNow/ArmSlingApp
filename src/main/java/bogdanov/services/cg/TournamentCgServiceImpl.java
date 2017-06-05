@@ -1,6 +1,5 @@
 package bogdanov.services.cg;
 
-import bogdanov.converter.TournamentConverter;
 import bogdanov.dto.TournamentDTO;
 import bogdanov.dto.request.TournamentRequestDTO;
 import bogdanov.entity.common.Tournament;
@@ -21,23 +20,17 @@ public class TournamentCgServiceImpl extends AbstractService implements Tourname
     @Autowired
     private TournamentBusinessService tournamentBusinessService;
 
-    @Autowired
-    private TournamentConverter tournamentConverter;
 
     public TournamentDTO createTournament(TournamentDTO tournamentDTO) {
-        Tournament tournament = tournamentConverter.toEntity(tournamentDTO);
+        Tournament tournament = mappingService.map(tournamentDTO, Tournament.class);
         Tournament createdTournament = tournamentBusinessService.createTournament(tournament);
-        return tournamentConverter.toDTO(createdTournament);
+        return mappingService.map(createdTournament, TournamentDTO.class);
     }
 
-    public List<TournamentDTO> findAllTournaments() {
-        List<Tournament> tournaments = tournamentBusinessService.findAllTournaments();
-        return tournamentConverter.listToDTOs(tournaments);
-    }
 
     public List<TournamentDTO> findAllTournaments(int page, int size, Sort.Direction direction, String[] properties) {
-        Page<Tournament> Tournaments = tournamentBusinessService.findAllTournaments(new PageRequest(page, size, direction, properties));
-        return tournamentConverter.listToDTOs(Tournaments.getContent());
+        Page<Tournament> tournaments = tournamentBusinessService.findAllTournaments(new PageRequest(page, size, direction, properties));
+        return mappingService.mapList(tournaments.getContent(), TournamentDTO.class);
 
     }
 

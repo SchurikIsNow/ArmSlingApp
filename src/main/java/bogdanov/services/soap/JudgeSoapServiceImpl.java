@@ -20,10 +20,6 @@ public class JudgeSoapServiceImpl implements JudgeSoapService {
         return judgeCgService.findAllJudges(page, size, direction, properties);
     }
 
-    public List<JudgeDTO> findAllJudges() {
-        return judgeCgService.findAllJudges();
-    }
-
     public JudgeDTO createJudge(JudgeDTO judgeDTO) {
         return judgeCgService.createJudge(judgeDTO);
     }

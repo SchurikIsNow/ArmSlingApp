@@ -12,8 +12,6 @@ public interface WrestlerBusinessService {
 
     Wrestler createWrestler(Wrestler wrestler);
 
-    List<Wrestler> findAllWrestlers();
-
     Page<Wrestler> findAllWrestlers(Pageable pageable);
 
     List<Wrestler> findAll(WrestlerRequest wrestlerRequest);

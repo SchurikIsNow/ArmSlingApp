@@ -20,10 +20,6 @@ public class TournamentSoapServiceImpl implements TournamentSoapService {
         return tournamentCgService.createTournament(tournamentDto);
     }
 
-    public List<TournamentDTO> findAllTournaments() {
-        return tournamentCgService.findAllTournaments();
-    }
-
     public List<TournamentDTO> findAllTournamentsWithFilter(int page, int size, Sort.Direction direction, String[] properties) {
         return tournamentCgService.findAllTournaments(page, size, direction, properties);
     }

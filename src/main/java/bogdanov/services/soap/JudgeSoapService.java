@@ -16,9 +16,6 @@ public interface JudgeSoapService {
     List<JudgeDTO> findAllJudgesWithFilter(int page, int size, Sort.Direction direction, String[] properties);
 
     @WebMethod
-    List<JudgeDTO> findAllJudges();
-
-    @WebMethod
     JudgeDTO createJudge(JudgeDTO judgeDTO);
 
     @WebMethod

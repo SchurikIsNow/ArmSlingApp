@@ -8,7 +8,5 @@ import java.util.List;
 public interface PersonalDataBusinessService {
     PersonalData createPetsonalData(PersonalData personalData);
 
-    List<PersonalData> findAllPersonalDatas();
-
     List<PersonalData> findAll(PersonalDataRequest personalDataRequest);
 }

@@ -18,10 +18,6 @@ public class CityBusinessServiceImpl implements CityBusinessService {
     @Autowired
     private CityRepository cityRepository;
 
-    public List<City> findAllCities() {
-        return cityRepository.findAll();
-    }
-
     public City createCity(City city) {
         return cityRepository.save(city);
     }

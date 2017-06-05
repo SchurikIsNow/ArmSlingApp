@@ -19,10 +19,6 @@ public class WrestlerSoapServiceImpl implements WrestlerSoapService {
         return wrestlerCgService.createWrestler(wrestlerDto);
     }
 
-    public List<WrestlerDTO> findAllWrestlers() {
-        return wrestlerCgService.findAllWrestlers();
-    }
-
     public List<WrestlerDTO> findAllWrestlersWithFilter(int page, int size, Sort.Direction direction, String[] properties) {
         return wrestlerCgService.findAllWrestlers(page, size, direction, properties);
     }

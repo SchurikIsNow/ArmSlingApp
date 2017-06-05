@@ -10,8 +10,6 @@ public interface TeamCgService {
 
     TeamDTO createTeam(TeamDTO teamDTO);
 
-    List<TeamDTO> findAllTeams();
-
     List<TeamDTO> findAllTeams(int page, int size, Sort.Direction direction, String[] properties);
 
     List<TeamDTO> findAll(TeamRequestDTO teamRequestDTO);

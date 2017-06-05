@@ -18,8 +18,5 @@ public interface TeamSoapService {
     List<TeamDTO> findAllTeamsWithFilter(int page, int size, Sort.Direction direction, String[] properties);
 
     @WebMethod
-    List<TeamDTO> findAllTeams();
-
-    @WebMethod
     List<TeamDTO> findAll(TeamRequestDTO teamRequestDTO);
 }

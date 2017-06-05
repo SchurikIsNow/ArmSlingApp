@@ -1,6 +1,5 @@
 package bogdanov.services.cg;
 
-import bogdanov.converter.JudgeConverter;
 import bogdanov.dto.JudgeDTO;
 import bogdanov.dto.request.JudgeRequestDTO;
 import bogdanov.entity.common.Judge;
@@ -21,23 +20,16 @@ public class JudgeCgServiceImpl extends AbstractService implements JudgeCgServic
     @Autowired
     private JudgeBusinessService judgeBusinessService;
 
-    @Autowired
-    private JudgeConverter judgeConverter;
 
     public JudgeDTO createJudge(JudgeDTO judgeDTO) {
-        Judge judge = judgeConverter.toEntity(judgeDTO);
+        Judge judge = mappingService.map(judgeDTO, Judge.class);
         Judge createdJudge = judgeBusinessService.createJudge(judge);
-        return judgeConverter.toDTO(createdJudge);
-    }
-
-    public List<JudgeDTO> findAllJudges() {
-        List<Judge> judges = judgeBusinessService.findAllJudges();
-        return judgeConverter.listToDTOs(judges);
+        return mappingService.map(createdJudge, JudgeDTO.class);
     }
 
     public List<JudgeDTO> findAllJudges(int page, int size, Sort.Direction direction, String[] properties) {
         Page<Judge> judges = judgeBusinessService.findAllJudges(new PageRequest(page, size, direction, properties));
-        return judgeConverter.listToDTOs(judges.getContent());
+        return mappingService.mapList(judges.getContent(), JudgeDTO.class);
 
     }
 

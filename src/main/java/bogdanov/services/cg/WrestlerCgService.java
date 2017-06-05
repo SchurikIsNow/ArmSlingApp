@@ -10,8 +10,6 @@ import java.util.List;
 public interface WrestlerCgService {
     WrestlerDTO createWrestler(WrestlerDTO wrestlerDTO);
 
-    List<WrestlerDTO> findAllWrestlers();
-
     List<WrestlerDTO> findAllWrestlers(int page, int size, Sort.Direction direction, String[] properties);
 
     List<WrestlerDTO> findAll(WrestlerRequestDTO wrestlerRequestDTO);

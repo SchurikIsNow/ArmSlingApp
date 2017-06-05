@@ -10,9 +10,6 @@ import java.util.List;
 
 public interface TournamentBusinessService {
 
-
-    List<Tournament> findAllTournaments();
-
     Tournament createTournament(Tournament tournament);
 
     Page<Tournament> findAllTournaments(Pageable pageable);

@@ -1,6 +1,5 @@
 package bogdanov.services.cg;
 
-import bogdanov.converter.WrestlerConverter;
 import bogdanov.dto.WrestlerDTO;
 import bogdanov.dto.request.WrestlerRequestDTO;
 import bogdanov.entity.common.Wrestler;
@@ -21,23 +20,15 @@ public class WrestlerCgServiceImpl extends AbstractService implements WrestlerCg
     @Autowired
     private WrestlerBusinessService wrestlerBusinessService;
 
-    @Autowired
-    private WrestlerConverter wrestlerConverter;
-
     public WrestlerDTO createWrestler(WrestlerDTO wrestlerDTO) {
-        Wrestler wrestler = wrestlerConverter.toEntity(wrestlerDTO);
+        Wrestler wrestler = mappingService.map(wrestlerDTO, Wrestler.class);
         Wrestler createdWrestler = wrestlerBusinessService.createWrestler(wrestler);
-        return wrestlerConverter.toDTO(createdWrestler);
-    }
-
-    public List<WrestlerDTO> findAllWrestlers() {
-        List<Wrestler> wrestlers = wrestlerBusinessService.findAllWrestlers();
-        return wrestlerConverter.listToDTOs(wrestlers);
+        return mappingService.map(createdWrestler, WrestlerDTO.class);
     }
 
     public List<WrestlerDTO> findAllWrestlers(int page, int size, Sort.Direction direction, String[] properties) {
         Page<Wrestler> wrestlers = wrestlerBusinessService.findAllWrestlers(new PageRequest(page, size, direction, properties));
-        return wrestlerConverter.listToDTOs(wrestlers.getContent());
+        return mappingService.mapList(wrestlers.getContent(), WrestlerDTO.class);
 
     }
 

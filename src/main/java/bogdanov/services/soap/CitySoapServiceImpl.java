@@ -19,10 +19,6 @@ public class CitySoapServiceImpl implements CitySoapService {
         return cityCgService.findAllCities(page, size, direction, properties);
     }
 
-    public List<CityDTO> findAllCities() {
-        return cityCgService.findAllCities();
-    }
-
     public CityDTO createCity(CityDTO cityDTO) {
         return cityCgService.createCity(cityDTO);
     }

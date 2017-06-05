@@ -11,8 +11,6 @@ public interface CityCgService {
 
     CityDTO createCity(CityDTO judgeDTO);
 
-    List<CityDTO> findAllCities();
-
     List<CityDTO> findAllCities(int page, int size, Sort.Direction direction, String[] properties);
 
     List<CityDTO> findAll(CityRequestDTO cityRequestDTO);

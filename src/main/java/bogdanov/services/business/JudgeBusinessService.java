@@ -12,8 +12,6 @@ public interface JudgeBusinessService {
 
     Judge createJudge(Judge judge);
 
-    List<Judge> findAllJudges();
-
     Page<Judge> findAllJudges(Pageable pageable);
 
     List<Judge> findAll(JudgeRequest judgeRequest);

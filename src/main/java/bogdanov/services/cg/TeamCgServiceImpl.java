@@ -1,6 +1,5 @@
 package bogdanov.services.cg;
 
-import bogdanov.converter.TeamConverter;
 import bogdanov.dto.TeamDTO;
 import bogdanov.dto.request.TeamRequestDTO;
 import bogdanov.entity.common.Team;
@@ -21,23 +20,16 @@ public class TeamCgServiceImpl extends AbstractService implements TeamCgService 
     @Autowired
     private TeamBusinessService teamBusinessService;
 
-    @Autowired
-    private TeamConverter teamConverter;
 
     public TeamDTO createTeam(TeamDTO teamDTO) {
-        Team team = teamConverter.toEntity(teamDTO);
+        Team team = mappingService.map(teamDTO, Team.class);
         Team createdTeam = teamBusinessService.createTeam(team);
-        return teamConverter.toDTO(createdTeam);
-    }
-
-    public List<TeamDTO> findAllTeams() {
-        List<Team> teams = teamBusinessService.findAllTeams();
-        return teamConverter.listToDTOs(teams);
+        return mappingService.map(createdTeam, TeamDTO.class);
     }
 
     public List<TeamDTO> findAllTeams(int page, int size, Sort.Direction direction, String[] properties) {
         Page<Team> teams = teamBusinessService.findAllTeams(new PageRequest(page, size, direction, properties));
-        return teamConverter.listToDTOs(teams.getContent());
+        return mappingService.mapList(teams.getContent(), TeamDTO.class);
 
     }
 

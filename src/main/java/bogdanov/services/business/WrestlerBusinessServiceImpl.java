@@ -19,10 +19,6 @@ public class WrestlerBusinessServiceImpl implements WrestlerBusinessService {
     @Autowired
     private WrestlerRepository wrestlerRepository;
 
-    public List<Wrestler> findAllWrestlers() {
-        return wrestlerRepository.findAll();
-    }
-
     public Wrestler createWrestler(Wrestler wrestler) {
         return wrestlerRepository.save(wrestler);
     }

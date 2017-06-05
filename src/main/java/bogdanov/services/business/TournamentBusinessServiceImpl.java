@@ -21,16 +21,6 @@ public class TournamentBusinessServiceImpl implements TournamentBusinessService 
     @Autowired
     private TournamentRepository tournamentRepository;
 
-    @Transactional
-    public List<Tournament> findAllTournaments() {
-        List<Tournament> list = tournamentRepository.findAll();
-
-        for (Tournament tournament : list) {
-            tournament.initializeLazy();
-        }
-        return list;
-
-    }
 
     public Tournament createTournament(Tournament tournament) {
         return tournamentRepository.save(tournament);
