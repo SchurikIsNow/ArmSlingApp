@@ -2,8 +2,9 @@ package bogdanov.services.business;
 
 import bogdanov.builders.predicate.WrestlerPredicates;
 import bogdanov.entity.common.QWrestler;
+import bogdanov.entity.common.Tournament;
 import bogdanov.entity.common.Wrestler;
-import bogdanov.entity.request.WrestlerRequest;
+import bogdanov.entity.request.find.WrestlerRequest;
 import bogdanov.repository.WrestlerRepository;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,12 @@ public class WrestlerBusinessServiceImpl implements WrestlerBusinessService {
     @Autowired
     private WrestlerRepository wrestlerRepository;
 
-    public Wrestler createWrestler(Wrestler wrestler) {
-        return wrestlerRepository.save(wrestler);
+    @Autowired
+    private TournamentBusinessService tournamentBusinessService;
+
+    public Wrestler createWrestler(Wrestler wrestler, long tournamentId) {
+        tournamentBusinessService.addWrestler(wrestler, tournamentId);
+        return wrestler;
     }
 
     public Page<Wrestler> findAllWrestlers(Pageable pageable) {

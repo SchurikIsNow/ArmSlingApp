@@ -3,7 +3,7 @@ package bogdanov.services.business;
 import bogdanov.builders.predicate.PersonalDataPredicates;
 import bogdanov.entity.common.PersonalData;
 import bogdanov.entity.common.QPersonalData;
-import bogdanov.entity.request.PersonalDataRequest;
+import bogdanov.entity.request.find.PersonalDataRequest;
 import bogdanov.repository.PersonalDataRepository;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.beans.factory.annotation.Autowired;

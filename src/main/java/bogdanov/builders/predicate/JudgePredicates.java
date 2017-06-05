@@ -2,8 +2,8 @@ package bogdanov.builders.predicate;
 
 
 import bogdanov.entity.common.QJudge;
-import bogdanov.entity.request.JudgeRequest;
-import bogdanov.entity.request.PersonalDataRequest;
+import bogdanov.entity.request.find.JudgeRequest;
+import bogdanov.entity.request.find.PersonalDataRequest;
 import com.querydsl.core.BooleanBuilder;
 import org.apache.commons.lang3.StringUtils;
 

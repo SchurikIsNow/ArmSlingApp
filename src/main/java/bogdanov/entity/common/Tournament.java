@@ -9,6 +9,8 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+import static com.google.common.collect.Lists.newArrayList;
+
 @Getter
 @Setter
 @Entity
@@ -24,7 +26,7 @@ public class Tournament {
     @Column(name = "tournamentType", updatable = false)
     private TournamentTypeEnum tournamentType;
 
-    @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "tournament_id")
     private List<Wrestler> wrestlers;
 
@@ -44,5 +46,13 @@ public class Tournament {
     public void initializeLazy() {
         judges.size();
         wrestlers.size();
+    }
+
+    public void addWrestler(Wrestler wrestler) {
+        if (wrestlers == null) {
+            wrestlers = newArrayList();
+        }
+        wrestlers.add(wrestler);
+        wrestler.setTournament(this);
     }
 }

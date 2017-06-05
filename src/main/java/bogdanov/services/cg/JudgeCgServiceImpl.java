@@ -1,9 +1,9 @@
 package bogdanov.services.cg;
 
 import bogdanov.dto.JudgeDTO;
-import bogdanov.dto.request.JudgeRequestDTO;
+import bogdanov.dto.request.find.JudgeRequestDTO;
 import bogdanov.entity.common.Judge;
-import bogdanov.entity.request.JudgeRequest;
+import bogdanov.entity.request.find.JudgeRequest;
 import bogdanov.services.AbstractService;
 import bogdanov.services.business.JudgeBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;

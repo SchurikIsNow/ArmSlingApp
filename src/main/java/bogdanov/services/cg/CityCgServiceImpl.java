@@ -1,9 +1,9 @@
 package bogdanov.services.cg;
 
 import bogdanov.dto.CityDTO;
-import bogdanov.dto.request.CityRequestDTO;
+import bogdanov.dto.request.find.CityRequestDTO;
 import bogdanov.entity.common.City;
-import bogdanov.entity.request.CityRequest;
+import bogdanov.entity.request.find.CityRequest;
 import bogdanov.services.AbstractService;
 import bogdanov.services.business.CityBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;

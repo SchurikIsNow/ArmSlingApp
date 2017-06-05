@@ -2,7 +2,7 @@ package bogdanov.builders.predicate;
 
 
 import bogdanov.entity.common.QTeam;
-import bogdanov.entity.request.TeamRequest;
+import bogdanov.entity.request.find.TeamRequest;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.util.StringUtils;
 

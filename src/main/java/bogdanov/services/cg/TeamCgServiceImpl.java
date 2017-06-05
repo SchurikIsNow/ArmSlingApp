@@ -1,9 +1,9 @@
 package bogdanov.services.cg;
 
 import bogdanov.dto.TeamDTO;
-import bogdanov.dto.request.TeamRequestDTO;
+import bogdanov.dto.request.find.TeamRequestDTO;
 import bogdanov.entity.common.Team;
-import bogdanov.entity.request.TeamRequest;
+import bogdanov.entity.request.find.TeamRequest;
 import bogdanov.services.AbstractService;
 import bogdanov.services.business.TeamBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;

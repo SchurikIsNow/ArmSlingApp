@@ -29,4 +29,8 @@ public class Wrestler {
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "city_id")
     private City city;
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "tournament_id")
+    private Tournament tournament;
 }

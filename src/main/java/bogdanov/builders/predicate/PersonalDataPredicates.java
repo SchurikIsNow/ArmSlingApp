@@ -2,7 +2,7 @@ package bogdanov.builders.predicate;
 
 
 import bogdanov.entity.common.QPersonalData;
-import bogdanov.entity.request.PersonalDataRequest;
+import bogdanov.entity.request.find.PersonalDataRequest;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.util.StringUtils;
 

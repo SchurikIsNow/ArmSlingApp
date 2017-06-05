@@ -1,7 +1,7 @@
 package bogdanov.services.soap;
 
 import bogdanov.dto.TeamDTO;
-import bogdanov.dto.request.TeamRequestDTO;
+import bogdanov.dto.request.find.TeamRequestDTO;
 import org.springframework.data.domain.Sort;
 
 import javax.jws.WebMethod;

@@ -3,7 +3,7 @@ package bogdanov.services.business;
 import bogdanov.builders.predicate.JudgePredicates;
 import bogdanov.entity.common.Judge;
 import bogdanov.entity.common.QJudge;
-import bogdanov.entity.request.JudgeRequest;
+import bogdanov.entity.request.find.JudgeRequest;
 import bogdanov.repository.JudgeRepository;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.beans.factory.annotation.Autowired;

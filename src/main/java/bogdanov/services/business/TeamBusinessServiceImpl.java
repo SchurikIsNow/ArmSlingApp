@@ -3,7 +3,7 @@ package bogdanov.services.business;
 import bogdanov.builders.predicate.TeamPredicates;
 import bogdanov.entity.common.QTeam;
 import bogdanov.entity.common.Team;
-import bogdanov.entity.request.TeamRequest;
+import bogdanov.entity.request.find.TeamRequest;
 import bogdanov.repository.TeamRepository;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.beans.factory.annotation.Autowired;

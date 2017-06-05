@@ -1,4 +1,4 @@
-package bogdanov.dto.request;
+package bogdanov.dto.request.find;
 
 import bogdanov.entity.enums.SexEnum;
 import bogdanov.entity.enums.TournamentTypeEnum;

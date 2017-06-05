@@ -1,7 +1,7 @@
 package bogdanov.services.soap;
 
 import bogdanov.dto.CityDTO;
-import bogdanov.dto.request.CityRequestDTO;
+import bogdanov.dto.request.find.CityRequestDTO;
 import bogdanov.services.cg.CityCgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;

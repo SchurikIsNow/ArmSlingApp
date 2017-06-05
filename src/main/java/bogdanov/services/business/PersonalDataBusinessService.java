@@ -1,7 +1,7 @@
 package bogdanov.services.business;
 
 import bogdanov.entity.common.PersonalData;
-import bogdanov.entity.request.PersonalDataRequest;
+import bogdanov.entity.request.find.PersonalDataRequest;
 
 import java.util.List;
 

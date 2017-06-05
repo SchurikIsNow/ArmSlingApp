@@ -2,7 +2,7 @@ package bogdanov.services.soap;
 
 
 import bogdanov.dto.JudgeDTO;
-import bogdanov.dto.request.JudgeRequestDTO;
+import bogdanov.dto.request.find.JudgeRequestDTO;
 import org.springframework.data.domain.Sort;
 
 import javax.jws.WebMethod;

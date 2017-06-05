@@ -1,7 +1,8 @@
 package bogdanov.services.soap;
 
 import bogdanov.dto.WrestlerDTO;
-import bogdanov.dto.request.WrestlerRequestDTO;
+import bogdanov.dto.request.create.WrestlerCreateRequestDTO;
+import bogdanov.dto.request.find.WrestlerRequestDTO;
 import bogdanov.services.cg.WrestlerCgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -15,8 +16,8 @@ public class WrestlerSoapServiceImpl implements WrestlerSoapService {
     @Autowired
     private WrestlerCgService wrestlerCgService;
 
-    public WrestlerDTO createWrestler(WrestlerDTO wrestlerDto) {
-        return wrestlerCgService.createWrestler(wrestlerDto);
+    public WrestlerDTO createWrestler(WrestlerCreateRequestDTO requestDTO) {
+        return wrestlerCgService.createWrestler(requestDTO);
     }
 
     public List<WrestlerDTO> findAllWrestlersWithFilter(int page, int size, Sort.Direction direction, String[] properties) {

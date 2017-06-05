@@ -1,7 +1,7 @@
 package bogdanov.services.soap;
 
 import bogdanov.dto.TournamentDTO;
-import bogdanov.dto.request.TournamentRequestDTO;
+import bogdanov.dto.request.find.TournamentRequestDTO;
 import bogdanov.services.cg.TournamentCgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;

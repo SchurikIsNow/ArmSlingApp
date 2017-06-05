@@ -1,7 +1,7 @@
 package bogdanov.services.business;
 
 import bogdanov.entity.common.Team;
-import bogdanov.entity.request.TeamRequest;
+import bogdanov.entity.request.find.TeamRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

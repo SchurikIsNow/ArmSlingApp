@@ -1,7 +1,7 @@
 package bogdanov.services.business;
 
 import bogdanov.entity.common.City;
-import bogdanov.entity.request.CityRequest;
+import bogdanov.entity.request.find.CityRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

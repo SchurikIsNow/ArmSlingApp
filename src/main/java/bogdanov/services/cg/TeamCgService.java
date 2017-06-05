@@ -1,7 +1,7 @@
 package bogdanov.services.cg;
 
 import bogdanov.dto.TeamDTO;
-import bogdanov.dto.request.TeamRequestDTO;
+import bogdanov.dto.request.find.TeamRequestDTO;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;

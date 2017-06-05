@@ -1,10 +1,10 @@
-package bogdanov.entity.request;
+package bogdanov.dto.request.find;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class TeamRequest {
+public class TeamRequestDTO {
     String teamName;
 }

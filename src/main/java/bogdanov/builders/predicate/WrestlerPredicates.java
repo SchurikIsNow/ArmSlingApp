@@ -1,10 +1,10 @@
 package bogdanov.builders.predicate;
 
 import bogdanov.entity.common.QWrestler;
-import bogdanov.entity.request.CityRequest;
-import bogdanov.entity.request.PersonalDataRequest;
-import bogdanov.entity.request.TeamRequest;
-import bogdanov.entity.request.WrestlerRequest;
+import bogdanov.entity.request.find.CityRequest;
+import bogdanov.entity.request.find.PersonalDataRequest;
+import bogdanov.entity.request.find.TeamRequest;
+import bogdanov.entity.request.find.WrestlerRequest;
 import com.querydsl.core.BooleanBuilder;
 
 

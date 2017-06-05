@@ -2,7 +2,7 @@ package bogdanov.services.business;
 
 
 import bogdanov.entity.common.Judge;
-import bogdanov.entity.request.JudgeRequest;
+import bogdanov.entity.request.find.JudgeRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

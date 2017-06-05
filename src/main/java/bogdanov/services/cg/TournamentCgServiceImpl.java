@@ -1,9 +1,9 @@
 package bogdanov.services.cg;
 
 import bogdanov.dto.TournamentDTO;
-import bogdanov.dto.request.TournamentRequestDTO;
+import bogdanov.dto.request.find.TournamentRequestDTO;
 import bogdanov.entity.common.Tournament;
-import bogdanov.entity.request.TournamentRequest;
+import bogdanov.entity.request.find.TournamentRequest;
 import bogdanov.services.AbstractService;
 import bogdanov.services.business.TournamentBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;

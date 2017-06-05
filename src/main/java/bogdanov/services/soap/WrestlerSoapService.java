@@ -1,7 +1,8 @@
 package bogdanov.services.soap;
 
 import bogdanov.dto.WrestlerDTO;
-import bogdanov.dto.request.WrestlerRequestDTO;
+import bogdanov.dto.request.create.WrestlerCreateRequestDTO;
+import bogdanov.dto.request.find.WrestlerRequestDTO;
 import org.springframework.data.domain.Sort;
 
 import javax.jws.WebMethod;
@@ -12,7 +13,7 @@ import java.util.List;
 public interface WrestlerSoapService {
 
     @WebMethod
-    WrestlerDTO createWrestler(WrestlerDTO wrestlerDto);
+    WrestlerDTO createWrestler(WrestlerCreateRequestDTO requestDTO);
 
     @WebMethod
     List<WrestlerDTO> findAllWrestlersWithFilter(int page, int size, Sort.Direction direction, String[] properties);

@@ -2,7 +2,7 @@ package bogdanov.builders.predicate;
 
 
 import bogdanov.entity.common.QTournament;
-import bogdanov.entity.request.TournamentRequest;
+import bogdanov.entity.request.find.TournamentRequest;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.util.StringUtils;
 

@@ -1,9 +1,10 @@
 package bogdanov.services.cg;
 
 import bogdanov.dto.WrestlerDTO;
-import bogdanov.dto.request.WrestlerRequestDTO;
+import bogdanov.dto.request.create.WrestlerCreateRequestDTO;
+import bogdanov.dto.request.find.WrestlerRequestDTO;
 import bogdanov.entity.common.Wrestler;
-import bogdanov.entity.request.WrestlerRequest;
+import bogdanov.entity.request.find.WrestlerRequest;
 import bogdanov.services.AbstractService;
 import bogdanov.services.business.WrestlerBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,9 @@ public class WrestlerCgServiceImpl extends AbstractService implements WrestlerCg
     @Autowired
     private WrestlerBusinessService wrestlerBusinessService;
 
-    public WrestlerDTO createWrestler(WrestlerDTO wrestlerDTO) {
-        Wrestler wrestler = mappingService.map(wrestlerDTO, Wrestler.class);
-        Wrestler createdWrestler = wrestlerBusinessService.createWrestler(wrestler);
+    public WrestlerDTO createWrestler(WrestlerCreateRequestDTO requestDTO) {
+        Wrestler wrestler = mappingService.map(requestDTO.getWrestlerDTO(), Wrestler.class);
+        Wrestler createdWrestler = wrestlerBusinessService.createWrestler(wrestler, requestDTO.getTournamentId());
         return mappingService.map(createdWrestler, WrestlerDTO.class);
     }
 

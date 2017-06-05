@@ -2,7 +2,7 @@ package bogdanov.builders.predicate;
 
 
 import bogdanov.entity.common.QCity;
-import bogdanov.entity.request.CityRequest;
+import bogdanov.entity.request.find.CityRequest;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.util.StringUtils;
 

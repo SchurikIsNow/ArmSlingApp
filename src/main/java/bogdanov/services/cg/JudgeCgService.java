@@ -2,7 +2,7 @@ package bogdanov.services.cg;
 
 
 import bogdanov.dto.JudgeDTO;
-import bogdanov.dto.request.JudgeRequestDTO;
+import bogdanov.dto.request.find.JudgeRequestDTO;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;

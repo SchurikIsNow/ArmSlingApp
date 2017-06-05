@@ -1,4 +1,4 @@
-package bogdanov.entity.request;
+package bogdanov.entity.request.find;
 
 import lombok.Getter;
 import lombok.Setter;

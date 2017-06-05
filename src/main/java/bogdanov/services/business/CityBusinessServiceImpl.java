@@ -3,7 +3,7 @@ package bogdanov.services.business;
 import bogdanov.builders.predicate.CityPredicates;
 import bogdanov.entity.common.City;
 import bogdanov.entity.common.QCity;
-import bogdanov.entity.request.CityRequest;
+import bogdanov.entity.request.find.CityRequest;
 import bogdanov.repository.CityRepository;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.beans.factory.annotation.Autowired;

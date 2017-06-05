@@ -4,7 +4,8 @@ package bogdanov.services.business;
 import bogdanov.builders.predicate.TournamentPredicates;
 import bogdanov.entity.common.QTournament;
 import bogdanov.entity.common.Tournament;
-import bogdanov.entity.request.TournamentRequest;
+import bogdanov.entity.common.Wrestler;
+import bogdanov.entity.request.find.TournamentRequest;
 import bogdanov.repository.TournamentRepository;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,9 +38,21 @@ public class TournamentBusinessServiceImpl implements TournamentBusinessService 
         return list;
     }
 
+    @Transactional
     public List<Tournament> findAll(TournamentRequest tournamentRequest) {
         BooleanBuilder filter = TournamentPredicates.getTournamentFilter(QTournament.tournament, tournamentRequest);
-        return (List<Tournament>) tournamentRepository.findAll(filter);
+        List<Tournament> tournaments = (List<Tournament>) tournamentRepository.findAll(filter);
+
+        for (Tournament tournament : tournaments) {
+            tournament.initializeLazy();
+        }
+        return tournaments;
     }
 
+    @Transactional
+    public void addWrestler(Wrestler wrestler, long tournamentId) {
+        Tournament tournament = tournamentRepository.getOne(tournamentId);
+        tournament.initializeLazy();
+        tournament.addWrestler(wrestler);
+    }
 }

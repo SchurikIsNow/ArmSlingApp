@@ -2,7 +2,7 @@ package bogdanov.services.soap;
 
 
 import bogdanov.dto.CityDTO;
-import bogdanov.dto.request.CityRequestDTO;
+import bogdanov.dto.request.find.CityRequestDTO;
 import org.springframework.data.domain.Sort;
 
 import javax.jws.WebMethod;
