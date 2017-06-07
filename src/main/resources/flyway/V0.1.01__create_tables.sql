@@ -4,8 +4,8 @@ CREATE TABLE arm_tournament (
     sexCategory VARCHAR NOT NULL,
     massCategory VARCHAR NOT NULL,
     ageCategory VARCHAR NOT NULL,
-    place VARCHAR,
-    beginDate DATE
+    beginDate DATE,
+    address_id BIGINT
 );
 
 CREATE TABLE pers_personaldata (
@@ -20,9 +20,12 @@ CREATE TABLE pers_wrestler (
     id BIGINT NOT NULL PRIMARY KEY,
     mass INTEGER,
     team_id BIGINT,
-    city_id BIGINT NOT NULL,
+    address_id BIGINT,
     personalData_id BIGINT NOT NULL REFERENCES pers_personaldata (id),
-    tournament_id BIGINT NOT NULL REFERENCES arm_tournament (id)
+    tournament_id BIGINT NOT NULL REFERENCES arm_tournament (id),
+    rating INTEGER,
+    lvl VARCHAR
+
 );
 
 CREATE TABLE pers_judge (
@@ -37,9 +40,12 @@ CREATE TABLE pers_team (
     teamName VARCHAR NOT NULL
 );
 
-CREATE TABLE pers_city (
+CREATE TABLE pers_address (
     id BIGINT NOT NULL PRIMARY KEY,
-    cityName VARCHAR NOT NULL
+    city VARCHAR,
+    region VARCHAR,
+    country VARCHAR,
+    exactAddress VARCHAR
 );
 
 CREATE SEQUENCE arm_tournament_seq;
@@ -47,4 +53,4 @@ CREATE SEQUENCE pers_personaldata_seq;
 CREATE SEQUENCE pers_wrestler_seq;
 CREATE SEQUENCE pers_judge_seq;
 CREATE SEQUENCE pers_team_seq;
-CREATE SEQUENCE pers_city_seq;
+CREATE SEQUENCE pers_address_seq;

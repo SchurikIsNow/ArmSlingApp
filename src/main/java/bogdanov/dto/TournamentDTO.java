@@ -16,10 +16,10 @@ public class TournamentDTO {
     private Long id;
     private String ageCategory;
     private String massCategory;
-    private String place;
     private Date beginDate;
     private TournamentTypeEnum tournamentType;
     private SexEnum sexCategory;
+    private AddressDTO address;
 
     private List<WrestlerDTO> wrestlers;
     private List<JudgeDTO> judges;

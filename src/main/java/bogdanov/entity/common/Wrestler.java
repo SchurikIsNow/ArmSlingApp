@@ -1,5 +1,6 @@
 package bogdanov.entity.common;
 
+import bogdanov.entity.enums.LevelEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +18,7 @@ public class Wrestler {
     private Long id;
 
     private Integer mass;
+    private Integer rating;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "team_id")
@@ -26,11 +28,15 @@ public class Wrestler {
     @JoinColumn(name = "personalData_id")
     private PersonalData personalData;
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "city_id")
-    private City city;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
+    private Address address;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "tournament_id")
     private Tournament tournament;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "lvl", updatable = false)
+    private LevelEnum level;
 }

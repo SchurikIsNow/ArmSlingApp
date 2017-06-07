@@ -30,6 +30,10 @@ public class Tournament {
     @JoinColumn(name = "tournament_id")
     private List<Wrestler> wrestlers;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
+    private Address address;
+
     @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(name = "tournament_id")
     private List<Judge> judges;
@@ -40,7 +44,6 @@ public class Tournament {
 
     private String ageCategory; // TODO add Enum
     private String massCategory;
-    private String place;
     private Date beginDate;
 
     public void initializeLazy() {

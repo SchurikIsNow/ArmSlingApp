@@ -7,7 +7,7 @@
         http://cxf.apache.org/schemas/jaxws.xsd">
 
     <jaxws:endpoint id="TeamSoapServiceWS"       implementor="#teamSoapServiceImpl"       address="/TeamSoapService"/>
-    <jaxws:endpoint id="CitySoapServiceWS"       implementor="#citySoapServiceImpl"       address="/CitySoapService"/>
+    <jaxws:endpoint id="AddressSoapServiceWS"    implementor="#addressSoapServiceImpl"    address="/AddressSoapService"/>
     <jaxws:endpoint id="WrestlerSoapServiceWS"   implementor="#wrestlerSoapServiceImpl"   address="/WrestlerSoapService"/>
     <jaxws:endpoint id="JudgeSoapServiceWS"      implementor="#judgeSoapServiceImpl"      address="/JudgeSoapService"/>
     <jaxws:endpoint id="TournamentSoapServiceWS" implementor="#tournamentSoapServiceImpl" address="/TournamentSoapService"/>

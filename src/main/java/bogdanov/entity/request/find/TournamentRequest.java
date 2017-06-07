@@ -12,10 +12,10 @@ import java.util.Date;
 public class TournamentRequest {
     String ageCategory;
     String massCategory;
-    String place;
     Date beginDate;
     TournamentTypeEnum tournamentType;
     SexEnum sexCategory;
+    AddressRequest address;
 
 //    List<WrestlerDTO> wrestlers;
 //    List<JudgeDTO> judges;

@@ -1,5 +1,6 @@
 package bogdanov.dto.request.find;
 
+import bogdanov.entity.common.Address;
 import bogdanov.entity.enums.SexEnum;
 import bogdanov.entity.enums.TournamentTypeEnum;
 import lombok.Getter;
@@ -12,10 +13,11 @@ import java.util.Date;
 public class TournamentRequestDTO {
     String ageCategory;
     String massCategory;
-    String place;
     Date beginDate;
     TournamentTypeEnum tournamentType;
     SexEnum sexCategory;
+    Address address;
+
 
 //     List<WrestlerDTO> wrestlers;
 //     List<JudgeDTO> judges;

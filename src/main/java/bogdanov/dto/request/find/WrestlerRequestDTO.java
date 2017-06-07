@@ -1,5 +1,6 @@
 package bogdanov.dto.request.find;
 
+import bogdanov.entity.enums.LevelEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +9,9 @@ import lombok.Setter;
 public class WrestlerRequestDTO {
 
     Integer mass;
+    Integer rating;
     TeamRequestDTO team;
-    CityRequestDTO city;
+    AddressRequestDTO exactAddress;
     PersonalDataRequestDTO personalData;
+    LevelEnum level;
 }

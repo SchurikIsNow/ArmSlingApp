@@ -2,7 +2,6 @@ package bogdanov.services.business;
 
 import bogdanov.builders.predicate.WrestlerPredicates;
 import bogdanov.entity.common.QWrestler;
-import bogdanov.entity.common.Tournament;
 import bogdanov.entity.common.Wrestler;
 import bogdanov.entity.request.find.WrestlerRequest;
 import bogdanov.repository.WrestlerRepository;

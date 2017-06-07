@@ -2,6 +2,7 @@ package bogdanov.builders.predicate;
 
 
 import bogdanov.entity.common.QTournament;
+import bogdanov.entity.request.find.AddressRequest;
 import bogdanov.entity.request.find.TournamentRequest;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.util.StringUtils;
@@ -20,14 +21,15 @@ public class TournamentPredicates {
         if (!StringUtils.isEmpty(tournamentRequest.getBeginDate()))
             filter.and(qTournament.beginDate.eq(tournamentRequest.getBeginDate()));
 
-        if (!StringUtils.isEmpty(tournamentRequest.getPlace()))
-            filter.and(qTournament.place.startsWithIgnoreCase(tournamentRequest.getPlace()));
-
         if (!StringUtils.isEmpty(tournamentRequest.getSexCategory()))
             filter.and(qTournament.sexCategory.eq(tournamentRequest.getSexCategory()));
 
         if (!StringUtils.isEmpty(tournamentRequest.getTournamentType()))
             filter.and(qTournament.tournamentType.eq(tournamentRequest.getTournamentType()));
+
+        AddressRequest addressRequest = tournamentRequest.getAddress();
+        if (addressRequest != null)
+            filter.and((AddressPredicates.getAddressFilter(qTournament.address, addressRequest)));
 
         return filter;
     }
