@@ -1,6 +1,8 @@
 package bogdanov.dto;
 
 
+import bogdanov.entity.enums.AgeCategoryEnum;
+import bogdanov.entity.enums.MassCategoryEnum;
 import bogdanov.entity.enums.SexEnum;
 import bogdanov.entity.enums.TournamentTypeEnum;
 import lombok.Getter;
@@ -14,8 +16,8 @@ import java.util.List;
 public class TournamentDTO {
 
     private Long id;
-    private String ageCategory;
-    private String massCategory;
+    private AgeCategoryEnum ageCategory;
+    private MassCategoryEnum massCategory;
     private Date beginDate;
     private TournamentTypeEnum tournamentType;
     private SexEnum sexCategory;

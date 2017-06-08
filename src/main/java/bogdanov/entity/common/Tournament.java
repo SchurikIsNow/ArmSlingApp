@@ -1,5 +1,7 @@
 package bogdanov.entity.common;
 
+import bogdanov.entity.enums.AgeCategoryEnum;
+import bogdanov.entity.enums.MassCategoryEnum;
 import bogdanov.entity.enums.SexEnum;
 import bogdanov.entity.enums.TournamentTypeEnum;
 import lombok.Getter;
@@ -42,8 +44,16 @@ public class Tournament {
     @Column(name = "sexCategory", updatable = false)
     private SexEnum sexCategory;
 
-    private String ageCategory; // TODO add Enum
-    private String massCategory;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "massCategory", updatable = false)
+    private MassCategoryEnum massCategory;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "ageCategory", updatable = false)
+    private AgeCategoryEnum ageCategory;
+
+//    private String ageCategory; // TODO add Enum
+//    private String massCategory; // TODO add Enum
     private Date beginDate;
 
     public void initializeLazy() {
